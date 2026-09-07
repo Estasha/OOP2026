@@ -60,7 +60,7 @@ public class HelloWorld {
 
 <img width="1109" height="737" alt="image" src="https://github.com/user-attachments/assets/a651d49d-a405-4a84-85c4-ed594726405a" />
 
-###Homework2
+### Homework2
 
 ```java
 
@@ -82,7 +82,7 @@ public class Homework2 {
 ```
 <img width="1025" height="488" alt="image" src="https://github.com/user-attachments/assets/2f88439d-d749-4caf-ae7a-2ac5a9bca6a1" />
 
-###Homework3
+### Homework3
 
 ```java
 
@@ -106,7 +106,7 @@ public class Homework3 {
 
 <img width="1132" height="477" alt="image" src="https://github.com/user-attachments/assets/f09f56cc-614f-494d-8ee7-9a84b3ad2cb7" />
 
-###Homework4
+### Homework4
 
 ```java
 
