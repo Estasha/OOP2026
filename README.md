@@ -128,4 +128,113 @@ public class Homework4 {
 
 <img width="1305" height="763" alt="image" src="https://github.com/user-attachments/assets/749cd2a8-3822-4a5b-96e1-3b751ff81e22" />
 
+## Homework5
+
+```java
+
+	public static void main(String[] args) {
+		//라이프니츠 원주율 공식
+		
+		int k;
+		double pi = 0;
+		for (k=0; k < 1000; k++) {
+			pi += 4*(Math.pow(-1, k)/(2*k + 1));
+			System.out.println(pi);
+		}
+```
+<img width="1173" height="637" alt="image" src="https://github.com/user-attachments/assets/cc44984c-666b-4d1e-9ab3-cdd62a726887" />
+
+		
+```java
+
+	public static void main(String[] args) {
+		//마디바 원주율 공식
+		
+		int k;
+		double pi = 0;
+		for (k=0; k < 1000; k++) {
+			pi += Math.sqrt(12)*(Math.pow(-1.0/3.0, k)/(2*k + 1));
+			System.out.println(pi);
+		}
+		
+	}
+```
+<img width="1185" height="617" alt="image" src="https://github.com/user-attachments/assets/3ce83e76-11b5-4999-bff9-9d93b1c40475" />
+
+
+
+## Homework6
+
+```java
+
+	public static void main(String[] args) {
+		int n = 6;
+		int[][] binomial = new int[n+1][n+1];
+		
+		for (int i = 0; i <= n; i++) {
+			for (int j = 0; j <= i; j++) {
+				if (j == 0 || j == i) {
+					binomial[i][j] = 1;
+				}
+				else {
+					binomial[i][j] = binomial[i-1][j-1] + binomial[i-1][j];
+				}
+			}
+		}
+		
+		for (int i = 0; i <= n; i++) {
+			for (int j = 0; j <= i; j++) {
+				System.out.print(binomial[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+```
+
+<img width="1219" height="629" alt="image" src="https://github.com/user-attachments/assets/00e062db-40fc-4672-904f-e32f468aa302" />
+
+## Homework7
+
+```java
+
+	public static void main(String[] args) {
+		//Selection-sorting 알고리즘 구현하기
+		int data[] = new int[20];
+		int n = data.length;
+		
+		for(int i=0; i<n; i++)
+		    data[i]=(int)(Math.random()*100);
+		
+		System.out.print("기존의 배열\t>> ");
+		for(int i=0; i<n; i++)
+		    System.out.print(data[i] + " ");
+		
+		for (int i = 0; i < n-1; i++) {
+			int minIndex = i;
+
+			for (int j = i + 1; j < n; j++) {
+				if (data[j] < data[minIndex]) {
+					minIndex = j;
+				}
+			}
+			int swap = data[minIndex];
+			data[minIndex] = data[i];
+			data[i] = swap;
+		}
+		System.out.println();
+		System.out.println();
+		
+		System.out.print("정렬된 배열\t>> ");
+		for(int i=0; i<n; i++)
+		    System.out.print(data[i] + " ");
+
+
+	}
+```
+
+<img width="646" height="752" alt="image" src="https://github.com/user-attachments/assets/579feba9-8653-4797-bb06-8aa0f894b6fb" />
+
+
+## Homework8
+
 
