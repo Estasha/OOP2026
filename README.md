@@ -234,7 +234,38 @@ public class Homework4 {
 
 <img width="646" height="752" alt="image" src="https://github.com/user-attachments/assets/579feba9-8653-4797-bb06-8aa0f894b6fb" />
 
-
 ## Homework8
+
+```java
+
+	public static void main(String[] args) {
+		int[][] score = new int[30][5];
+		
+		for (int i = 0; i < 30; i++) {
+			int sum = 0;
+			
+			for (int j = 0; j < 4; j++) {
+				score[i][j] = (int)(Math.random()*101);
+				sum += score[i][j];
+			}
+			score[i][4] = sum;
+		}
+		
+		System.out.println("번호 \t국어 \t영어 \t수학 \t과학 \t합계");
+		for (int i = 0; i < 30; i++) {
+			System.out.print((i+1) + "번\t");
+			
+			for (int j = 0; j < 5; j++) {
+				System.out.print(score[i][j] + "\t");
+			}
+			System.out.println();
+		}
+
+	}
+```
+
+<img width="1426" height="748" alt="image" src="https://github.com/user-attachments/assets/f2f06160-4edd-45a3-8919-074e31b1a806" />
+
+
 
 
