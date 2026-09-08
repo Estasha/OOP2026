@@ -264,7 +264,8 @@ public class Homework4 {
 	}
 ```
 
-<img width="1426" height="748" alt="image" src="https://github.com/user-attachments/assets/f2f06160-4edd-45a3-8919-074e31b1a806" />
+<img width="1431" height="757" alt="image" src="https://github.com/user-attachments/assets/95777b26-2a3e-4792-83a6-e32b18bce4e1" />
+
 
 
 
