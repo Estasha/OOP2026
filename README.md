@@ -266,6 +266,95 @@ public class Homework4 {
 
 <img width="1431" height="757" alt="image" src="https://github.com/user-attachments/assets/95777b26-2a3e-4792-83a6-e32b18bce4e1" />
 
+## Homework9
+
+```java
+import java.util.Scanner;
+public class Homework9 {
+
+	public static void main(String[] args) {
+		// 10진법을 2진법으로 변환
+		Scanner stdIn = new Scanner(System.in);
+		int[] binary = new int[16];
+		int n = binary.length;
+		
+		System.out.print("십진수 입력 >> ");
+		double input = stdIn.nextDouble();
+		
+		int intPart = (int)input;
+		double fracPart = input - intPart;
+		
+		//정수부 변환
+		int i = 0;
+		int decimal = intPart;
+		while (decimal > 0 && i < n) {
+			binary[i] = decimal % 2;
+			decimal /= 2;
+			i++;
+		}
+		
+		//소수부 변환
+		StringBuilder fracResult = new StringBuilder();
+		int limit = 10;
+		
+		for(int k = 0; k < limit && fracPart != 0; k++) {
+			fracPart *= 2;
+			int bit = (int)fracPart;
+			fracResult.append(bit);
+			fracPart -= bit;
+		}
+		
+		
+		//출력
+		System.out.print("십진수를 이진수로 변환: ");
+		for (int j = i-1; j >= 0; j--) {
+			System.out.print(binary[j]);
+		}
+		
+		System.out.println("." + fracResult);
+		
+		System.out.println();
+		System.out.println();
+		
+		//2진법을 10진법으로 변환
+		System.out.print("이진수 입력 >> ");
+		double binaryInput = stdIn.nextDouble();
+		
+		double binaryToDecimalResult = 0;
+		
+		int decimalIntPart = (int) binaryInput;
+		double decimalFracPart = binaryInput - decimalIntPart;
+		
+		//정수부 변환
+		i = 0;
+		while (decimalIntPart > 0) {
+			long digit = decimalIntPart % 10;
+			binaryToDecimalResult += digit * Math.pow(2, i); // Math.pow함수 아웃풋이 항상 double형 이므로 double로의 형변환 불필요
+			decimalIntPart /= 10;
+			i++;
+		}
+		
+		//소수부 변환
+		i = -1;
+		while (i > -10) {
+			decimalFracPart *= 10;
+			int digit = (decimalFracPart >= 0.9999999) ? 1 : 0; //double 부동소수점 오차를 잡아주는 코드
+			binaryToDecimalResult = binaryToDecimalResult + digit * Math.pow(2, i);
+			decimalFracPart -= digit;
+			i--;
+		}
+		
+		//출력
+		System.out.print("\n이진수를 십진수로 변환: " + binaryToDecimalResult);
+
+	}
+
+}
+```
+
+<img width="1429" height="817" alt="image" src="https://github.com/user-attachments/assets/6882c6db-f9a7-4ffa-b85d-105085e288b2" />
+<img width="1376" height="801" alt="image" src="https://github.com/user-attachments/assets/861340f5-629f-4ceb-bb57-1e70b7610651" />
+
 
 
 
