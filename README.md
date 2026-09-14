@@ -269,4 +269,60 @@ public class Homework4 {
 
 
 
+## Homework10
+
+```java
+	public static void main(String[] args) {
+		// 도수분포표 만들기
+		for (int i=0; i<args.length; i++) {
+			//System.out.println(args[i]);   
+			Integer.parseInt(args[i]);
+			}
+		
+		int arrayCount   = Integer.parseInt(args[0]);  // 100 (데이터 개수)
+		int maxValue     = Integer.parseInt(args[1]);  // 100 (0~100 범위)
+		int binSize      = Integer.parseInt(args[2]);  // 10  (10 단위로 구간 나누기)
+		int displayScale = Integer.parseInt(args[3]);  // 1   (# 하나가 몇 개를 의미하는지)
+		/*
+		int arrayCount   = 100;  // 100 (데이터 개수)
+		int maxValue     = 100;  // 100 (0~100 범위)
+		int binSize      = 10;  // 10  (10 단위로 구간 나누기)
+		int displayScale = 1;  // 1   (# 하나가 몇 개를 의미하는지)
+		*/
+		//data배열에 0~99까지 랜덤 값 대입
+		int[] data = new int[arrayCount];
+		for (int i = 0; i < data.length; i++) {
+			data[i] = (int)(Math.random()*(maxValue));
+		}
+		
+		int binCount = (maxValue + 1) / binSize;	//구간 갯수 계산
+        int[] frequency = new int[binCount];		//구간 10개 짜리 배열 생성
+
+        
+        for (int i = 0; i < data.length; i++) {
+            int binIndex = data[i] / binSize;       // 어느 구간에 속하는지 계산
+            frequency[binIndex]++;					// binIndex가 0이라면  frequency[0] 값이 1증가함
+        }
+        
+        for (int i = 0; i < binCount; i++) {
+            int rangeStart = i * binSize;
+            int rangeEnd = rangeStart + binSize - 1;
+
+            System.out.print(rangeStart + "~" + rangeEnd + "\t\t");
+
+            int barLength = frequency[i] / displayScale;
+            for (int j = 0; j < barLength; j++) {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+	}
+```
+
+<img width="1448" height="818" alt="image" src="https://github.com/user-attachments/assets/707b1e49-ec34-4946-a5e5-08982371ccb7" />
+
+
+
+
+
 
