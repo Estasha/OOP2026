@@ -413,6 +413,94 @@ public class Homework9 {
 
 ## Homework11
 
+```java
+
+import java.util.Scanner;
+public class Homework11 {
+	
+	public static void main(String[] args) {
+		// 산술평균 기하평균 조화평균 중앙값 계산하기
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.print("수 입력 >> ");
+		int[] data = new int[7];
+		for (int i = 0; i < data.length; i++) {
+			//data[i] = (int)(Math.random()*100 + 1);
+			data[i] = scan.nextInt();
+			//System.out.println(data[i]);
+		}
+		//산술평균
+		double arithmeticMean = 0;
+		int sum = 0;
+		
+		for (int i = 0; i < data.length; i++)
+			sum += data[i];
+		
+		arithmeticMean = sum / data.length;
+		System.out.print("\n산술평균\t: " + arithmeticMean);
+		
+
+		//기하평균
+		double geometricMean = 0;
+		double multiply = 1;
+		
+		for (int i = 0; i < data.length; i++) {
+			multiply *= data[i];
+		}
+		geometricMean = Math.pow(multiply, 1. / data.length);
+		System.out.print("\n기하평균\t: " + geometricMean);
+		
+
+		//조화평균
+		double harmonicMean;
+		double harmonicSum = 0;
+		
+		for (int i = 0; i < data.length; i++) {
+			harmonicSum += 1. / data[i];
+		}
+		harmonicMean = data.length / harmonicSum;
+		System.out.print("\n조화평균\t: " + harmonicMean);
+		
+
+		//중앙값
+		double median;
+		
+		for (int i = 0; i < data.length - 1; i++) {
+			int min = i;
+			for (int j = i + 1; j < data.length; j++) {
+				if (data[j] < data[min])
+					min = j;
+			}
+			int swap = data[min];
+			data[min] = data[i];
+			data[i] = swap;
+		}
+		/*
+		System.out.print("\n정렬 값 >> ");
+		for (int i = 0; i < data.length; i++)
+			System.out.print(data[i] + " ");
+			*/
+		
+		if (data.length % 2 == 1) {
+			median = data[data.length / 2 ]; //인덱스는 0번 부터 시작하므로 data.length / 2 + 1 을 해선 안된다
+		}
+		else {
+			median = (data[data.length / 2 - 1] + data[data.length / 2]) / 2;
+		}
+		
+		System.out.print("\n중앙값\t: " + median);
+
+	}
+
+}
+```
+
+
+<img width="1240" height="701" alt="image" src="https://github.com/user-attachments/assets/783545c6-3bfd-4124-9265-ad76b829a746" />
+<img width="1299" height="810" alt="image" src="https://github.com/user-attachments/assets/5d7970f7-785d-4301-99bf-ccc6854a0b8a" />
+
+
+
 
 
 
