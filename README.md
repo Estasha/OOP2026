@@ -409,6 +409,12 @@ public class Homework9 {
 ```
 
 <img width="1448" height="818" alt="image" src="https://github.com/user-attachments/assets/707b1e49-ec34-4946-a5e5-08982371ccb7" />
+<img width="1154" height="335" alt="image" src="https://github.com/user-attachments/assets/89a5fde4-a6f5-443a-bee2-dbc8ad9159d0" />
+
+## Homework11
+
+
+
 
 
 
