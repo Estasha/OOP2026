@@ -500,6 +500,9 @@ public class Homework11 {
 <img width="1299" height="810" alt="image" src="https://github.com/user-attachments/assets/5d7970f7-785d-4301-99bf-ccc6854a0b8a" />
 
 
+## Homework12
+
+<img width="1445" height="713" alt="image" src="https://github.com/user-attachments/assets/7664cd1c-6dcb-455c-939b-4cde466ad1c7" />
 
 
 
