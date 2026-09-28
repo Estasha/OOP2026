@@ -504,6 +504,129 @@ public class Homework11 {
 
 <img width="1445" height="713" alt="image" src="https://github.com/user-attachments/assets/7664cd1c-6dcb-455c-939b-4cde466ad1c7" />
 
+## Homework13
+
+```java
+import java.util.Scanner;
+public class Homework13 {
+
+	public static void main(String[] args) {
+		// 계산기 만들기
+		double out;
+	    while(true) {
+	        Scanner scanner = new Scanner(System.in);
+	        String inputString = scanner.nextLine();
+	        System.out.println(inputString);
+	        String[] arrOfStr = inputString.split(" "); 
+	        for (String a : arrOfStr) 
+	          System.out.println(a); 
+	        
+	        if (arrOfStr[1].equals("+")) {
+	    	   out = Integer.parseInt(arrOfStr[0])+Integer.parseInt(arrOfStr[2]);
+	    	   if (arrOfStr.length == 3)
+	    		   System.out.println(out);
+	    	   
+	    	   if (arrOfStr.length == 5) {
+	    		   if (arrOfStr[3].equals("+")) {
+	    			   out += Integer.parseInt(arrOfStr[4]);
+	    			   System.out.println(out);
+	    		   }
+	    		   if (arrOfStr[3].equals("-")) {
+	    			   out -= Integer.parseInt(arrOfStr[4]);
+	    			   System.out.println(out);
+	    		   }
+	    		   if (arrOfStr[3].equals("#")) {
+	    			   out = Integer.parseInt(arrOfStr[0])+Integer.parseInt(arrOfStr[2])*Integer.parseInt(arrOfStr[4]);
+	    			   System.out.println(out);
+	    		   }
+	    		   if (arrOfStr[3].equals("/")) {
+	    			   out = Integer.parseInt(arrOfStr[0])+Integer.parseInt(arrOfStr[2])/(double)Integer.parseInt(arrOfStr[4]);
+	    			   System.out.println(out);
+	    		   } 
+	    	   }    	   
+	        }
+	        
+	        else if (arrOfStr[1].equals("-")) {
+		    	   out = Integer.parseInt(arrOfStr[0]) - Integer.parseInt(arrOfStr[2]);
+		    	   if (arrOfStr.length == 3)
+		    		   System.out.println(out);
+		    	   
+		    	   if (arrOfStr.length == 5) {
+		    		   if (arrOfStr[3].equals("+")) {
+		    			   out += Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   }
+		    		   if (arrOfStr[3].equals("-")) {
+		    			   out -= Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   }
+		    		   if (arrOfStr[3].equals("#")) {
+		    			   out = Integer.parseInt(arrOfStr[0])-Integer.parseInt(arrOfStr[2])*Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   }
+		    		   if (arrOfStr[3].equals("/")) {
+		    			   out = Integer.parseInt(arrOfStr[0])-Integer.parseInt(arrOfStr[2])/(double)Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   } 
+		    	   } 
+	        }
+	        
+	        else if (arrOfStr[1].equals("#")) {
+		    	   out = Integer.parseInt(arrOfStr[0]) * Integer.parseInt(arrOfStr[2]);
+		    	   if (arrOfStr.length == 3)
+		    		   System.out.println(out);
+		    	   
+		    	   if (arrOfStr.length == 5) {
+		    		   if (arrOfStr[3].equals("+")) {
+		    			   out += Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   }
+		    		   if (arrOfStr[3].equals("-")) {
+		    			   out -= Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   }
+		    		   if (arrOfStr[3].equals("#")) {
+		    			   out = Integer.parseInt(arrOfStr[0])*Integer.parseInt(arrOfStr[2])*Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   }
+		    		   if (arrOfStr[3].equals("/")) {
+		    			   out = Integer.parseInt(arrOfStr[0])*Integer.parseInt(arrOfStr[2])/(double)Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   } 
+		    	   } 
+	        }
+	        
+	        else if (arrOfStr[1].equals("/")) {
+		    	   out = (double)(Integer.parseInt(arrOfStr[0])) / Integer.parseInt(arrOfStr[2]);
+		    	   if (arrOfStr.length == 3)
+		    		   System.out.println(out);
+		    	   
+		    	   if (arrOfStr.length == 5) {
+		    		   if (arrOfStr[3].equals("+")) {
+		    			   out += Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   }
+		    		   if (arrOfStr[3].equals("-")) {
+		    			   out -= Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   }
+		    		   if (arrOfStr[3].equals("#")) {
+		    			   out = Integer.parseInt(arrOfStr[0])/Integer.parseInt(arrOfStr[2])*Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   }
+		    		   if (arrOfStr[3].equals("/")) {
+		    			   out = Integer.parseInt(arrOfStr[0])/Integer.parseInt(arrOfStr[2])/Integer.parseInt(arrOfStr[4]);
+		    			   System.out.println(out);
+		    		   } 
+		    	   } 
+	        }
+	    }
+	}
+}
+```
+
+<img width="1312" height="825" alt="image" src="https://github.com/user-attachments/assets/0feb0fe9-496c-47d9-94cd-46f00e508be8" />
+
 
 
 
