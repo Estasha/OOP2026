@@ -627,6 +627,166 @@ public class Homework13 {
 
 <img width="1312" height="825" alt="image" src="https://github.com/user-attachments/assets/0feb0fe9-496c-47d9-94cd-46f00e508be8" />
 
+## Homework 14
+
+```java
+
+
+public class Numbers {
+	int num[];
+	
+	Numbers(int num[]) {
+		this.num = num;
+	}
+	
+	double getTotal() {
+		double sum=0;
+		for(int i=0; i<num.length; i++) sum+=num[i];
+		return sum;
+	}
+	
+	double getArithmaticMean() {
+		return getTotal()/num.length;
+	}
+	
+	double getHarmonicMean() {
+		double harmonicMean;
+		double harmonicSum = 0;
+		
+		for (int i = 0; i < num.length; i++) {
+			harmonicSum += 1. / num[i];
+		}
+		harmonicMean = num.length / harmonicSum;
+		return harmonicMean;
+	}
+	
+	double getGeometricMean() {
+		double geometricMean = 0;
+		double multiply = 1;
+		
+		for (int i = 0; i < num.length; i++) {
+			multiply *= num[i];
+		}
+		geometricMean = Math.pow(multiply, 1. / num.length);
+		return geometricMean;
+	}	
+	
+	int getMedian() {
+		double median;
+		
+		sorting();
+		
+		if (num.length % 2 == 1) {
+			median = num[num.length / 2 ]; //인덱스는 0번 부터 시작하므로 data.length / 2 + 1 을 해선 안된다
+		}
+		else {
+			median = (num[num.length / 2 - 1] + num[num.length / 2]) / 2;
+		}
+		
+		/*
+		System.out.print("sort: ");
+		for(int i=0; i<num.length; i++) 
+			System.out.print(num[i] + " ");
+		System.out.println();
+		*/
+		
+		return (int)median;
+	}
+	
+	void sorting() {
+		for (int i = 0; i < num.length - 1; i++) {
+			int min = i;
+			for (int j = i + 1; j < num.length; j++) {
+				if (num[j] < num[min])
+					min = j;
+			}
+			int swap = num[min];
+			num[min] = num[i];
+			num[i] = swap;
+		}
+	}
+	
+	void drawHistogram(int start, int end, int binCount, int scale) {
+		// 도수분포표 만들기
+		/*
+		int arrayCount   = Integer.parseInt(args[0]);  // 100 (데이터 개수)
+		int maxValue     = Integer.parseInt(args[1]);  // 100 (0~100 범위)
+		int binSize      = Integer.parseInt(args[2]);  // 10  (10 단위로 구간 나누기)
+		int displayScale = Integer.parseInt(args[3]);  // 1   (# 하나가 몇 개를 의미하는지)
+		
+		int arrayCount   = 100;  // 100 (데이터 개수)
+		int maxValue     = 100;  // 100 (0~100 범위)
+		int binSize      = 10;  // 10  (10 단위로 구간 나누기)
+		int displayScale = 1;  // 1   (# 하나가 몇 개를 의미하는지)
+		*/
+		
+		
+		for (int i = 0; i < num.length; i++) {
+			num[i] = (int)(Math.random()*(end - start));
+		}
+		
+		int binCountt = (end - start + 1) / binCount;	//구간 갯수 계산
+        int[] frequency = new int[binCount];		//구간 10개 짜리 배열 생성
+
+        
+        for (int i = 0; i < num.length; i++) {
+            int binIndex = num[i] / binCount;       // 어느 구간에 속하는지 계산
+            frequency[binIndex]++;					// binIndex가 0이라면  frequency[0] 값이 1증가함
+        }
+        
+        // 4. 히스토그램 출력
+        for (int i = 0; i < binCount; i++) {
+            int rangeStart = i * binCount;
+            int rangeEnd = rangeStart + binCount - 1;
+
+            System.out.print(rangeStart + "~" + rangeEnd + "\t\t");
+
+            int barLength = frequency[i] / scale;
+            for (int j = 0; j < barLength; j++) {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+	}
+	
+	void display() {
+		System.out.printf("%3d :", num.length);		
+		for(int i=0; i<num.length; i++) 
+			System.out.printf("%3d ", num[i]);
+		System.out.println();
+	}
+
+}
+
+```
+
+```java
+
+public class NumbersTest {
+	
+	public static void main(String[] args) {
+		int size=100;
+		int data[]=new int[size];
+		
+		for(int i=0; i<size; i++) 
+			data[i]=(int)(Math.random()*100);
+		
+		Numbers obj = new Numbers(data);
+		
+		obj.display();
+		System.out.println();
+
+		//System.out.printf("getMedian : %d\n", obj.getMedian());
+		System.out.printf("Arithmetic Mean : %5.2f\n", obj.getArithmaticMean());
+		System.out.printf("Geometric Mean : %5.2f\n", obj.getGeometricMean());
+		System.out.printf("getHarmonic Mean : %5.2f\n", obj.getHarmonicMean());	
+		System.out.println();
+		obj.drawHistogram(0,100,10,1);
+	}
+
+}
+```
+<img width="1505" height="894" alt="image" src="https://github.com/user-attachments/assets/faeaff69-651d-4432-bbe2-226bd10cb7cc" />
 
 
 
