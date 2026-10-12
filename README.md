@@ -1,4 +1,8 @@
 # OOP2026
+
+중간고사 출제
+원주율 피보나치  2진법10진법 더블프리시즌 2의보수 class, constructor, this, private, void, overloading, static, final
+
 ### Homework1
 ```java
 public class HelloWorld {
